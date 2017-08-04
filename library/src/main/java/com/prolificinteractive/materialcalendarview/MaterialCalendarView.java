@@ -1157,6 +1157,7 @@ public class MaterialCalendarView extends ViewGroup {
         boolean dynamicHeightEnabled = false;
         CalendarMode calendarMode = CalendarMode.MONTHS;
         CalendarDay currentMonth = null;
+        boolean saveCurrentPosition;
         boolean cacheCurrentPosition;
 
         SavedState(Parcelable superState) {
@@ -1184,6 +1185,7 @@ public class MaterialCalendarView extends ViewGroup {
             out.writeInt(calendarMode == CalendarMode.WEEKS ? 1 : 0);
             out.writeParcelable(currentMonth, 0);
             out.writeByte((byte) (cacheCurrentPosition ? 1 : 0));
+            out.writeByte((byte) (saveCurrentPosition ? 1 : 0));
         }
 
         public static final Parcelable.Creator<SavedState> CREATOR
@@ -1833,7 +1835,7 @@ public class MaterialCalendarView extends ViewGroup {
     public class StateBuilder {
         private CalendarMode calendarMode = CalendarMode.MONTHS;
         private int firstDayOfWeek = Calendar.getInstance().getFirstDayOfWeek();
-        private boolean cacheCurrentPosition = true;
+        private boolean cacheCurrentPosition = false;
         private CalendarDay minDate = null;
         private CalendarDay maxDate = null;
 
