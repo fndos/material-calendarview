@@ -1833,7 +1833,7 @@ public class MaterialCalendarView extends ViewGroup {
     public class StateBuilder {
         private CalendarMode calendarMode = CalendarMode.MONTHS;
         private int firstDayOfWeek = Calendar.getInstance().getFirstDayOfWeek();
-        private boolean cacheCurrentPosition = false;
+        private boolean cacheCurrentPosition = true;
         private CalendarDay minDate = null;
         private CalendarDay maxDate = null;
 
