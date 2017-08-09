@@ -32,8 +32,6 @@ public class MonthArrayTitleFormatter implements TitleFormatter {
     @Override
     public CharSequence format(CalendarDay day) {
         return new SpannableStringBuilder()
-                .append(monthLabels[day.getMonth()])
-                .append(" ")
-                .append(String.valueOf(day.getYear()));
+                .append(monthLabels[day.getMonth()]);
     }
 }
