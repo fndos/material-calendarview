@@ -1152,7 +1152,7 @@ public class MaterialCalendarView extends ViewGroup {
         int orientation = 0;
         int tileWidthPx = -1;
         int tileHeightPx = -1;
-        boolean topbarVisible = true;
+        boolean topbarVisible = false;
         int selectionMode = SELECTION_MODE_SINGLE;
         boolean dynamicHeightEnabled = false;
         CalendarMode calendarMode = CalendarMode.MONTHS;
