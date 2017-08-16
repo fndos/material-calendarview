@@ -33,6 +33,7 @@ import com.prolificinteractive.materialcalendarview.format.MonthArrayTitleFormat
 import com.prolificinteractive.materialcalendarview.format.TitleFormatter;
 import com.prolificinteractive.materialcalendarview.format.WeekDayFormatter;
 
+import java.io.Serializable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -64,7 +65,7 @@ import java.util.List;
  * 595px wide. The extra 5px are distributed left and right to get to 600px.
  * </p>
  */
-public class MaterialCalendarView extends ViewGroup {
+public class MaterialCalendarView extends ViewGroup implements Serializable {
 
     public static final int INVALID_TILE_DIMENSION = -10;
 
