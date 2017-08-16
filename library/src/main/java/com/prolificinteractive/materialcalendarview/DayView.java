@@ -260,7 +260,7 @@ class DayView extends CheckedTextView {
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        calculateBounds(right - left, bottom - top);
+        calculateBounds((right - left)/2, (bottom - top)/2); //Fernando's Change
         regenerateBackground();
     }
 
