@@ -24,6 +24,7 @@ import com.prolificinteractive.materialcalendarview.MaterialCalendarView.ShowOth
 import com.prolificinteractive.materialcalendarview.format.DayFormatter;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import static com.prolificinteractive.materialcalendarview.MaterialCalendarView.showDecoratedDisabled;
 import static com.prolificinteractive.materialcalendarview.MaterialCalendarView.showOtherMonths;
@@ -265,6 +266,25 @@ class DayView extends CheckedTextView {
     }
 
     private void calculateBounds(int width, int height) {
+
+
+        final int radius = Math.min(height, width)/2;
+        final  int xoffset =Math.abs(width-radius)/2;
+        final  int yoffset =Math.abs(height-radius)/2;
+
+        // Lollipop platform bug. Circle drawable offset needs to be half of normal offset
+        final int xcircleOffset = Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP ? xoffset / 2 : xoffset;
+        final int ycircleOffset = Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP ? yoffset / 2 : yoffset;
+        Logger log = Logger.getLogger("lavasoft");
+
+        if (width >= height) {
+            circleDrawableRect.set(xoffset, yoffset, radius + xoffset, radius+yoffset);
+            circleDrawableRect.set(xcircleOffset, ycircleOffset, radius + xcircleOffset, radius+ycircleOffset);
+        }
+
+    }
+
+    /*private void calculateBounds(int width, int height) {
         final int radius = Math.min(height, width);
         final int offset = Math.abs(height - width) / 2;
 
@@ -278,5 +298,5 @@ class DayView extends CheckedTextView {
             tempRect.set(0, offset, width, radius + offset);
             circleDrawableRect.set(0, circleOffset, width, radius + circleOffset);
         }
-    }
+    }*/
 }
