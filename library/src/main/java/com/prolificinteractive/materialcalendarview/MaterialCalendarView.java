@@ -1873,6 +1873,10 @@ public class MaterialCalendarView extends ViewGroup {
             return this;
         }
 
+        public String getCalendarDisplayMode() {
+            return this.calendarMode.toString();
+        }
+        
 
         /**
          * @param calendar set the minimum selectable date, null for no minimum
