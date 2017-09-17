@@ -1949,6 +1949,10 @@ public class MaterialCalendarView extends ViewGroup {
         }
     }
 
+    public String getTitle() {
+        return title.getText().toString();
+    }
+
     private void commit(State state) {
         // Use the calendarDayToShow to determine which date to focus on for the case of switching between month and week views
         CalendarDay calendarDayToShow = null;
