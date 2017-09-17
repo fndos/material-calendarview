@@ -11,7 +11,7 @@ import java.util.Collection;
  * seven {@linkplain WeekDayView}s.
  */
 @SuppressLint("ViewConstructor")
-public class MonthView extends CalendarPagerView {
+class MonthView extends CalendarPagerView {
 
     public MonthView(@NonNull MaterialCalendarView view, CalendarDay month, int firstDayOfWeek) {
         super(view, month, firstDayOfWeek);
