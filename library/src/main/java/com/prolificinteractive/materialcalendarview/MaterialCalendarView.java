@@ -1873,10 +1873,15 @@ public class MaterialCalendarView extends ViewGroup {
             return this;
         }
 
+        /**
+         * Get calendar display mode. The default mode is Months.
+         * When switching between modes will select todays date, or the selected date,
+         * if selection mode is single.
+         */
         public String getCalendarDisplayMode() {
             return this.calendarMode.toString();
         }
-        
+
 
         /**
          * @param calendar set the minimum selectable date, null for no minimum
