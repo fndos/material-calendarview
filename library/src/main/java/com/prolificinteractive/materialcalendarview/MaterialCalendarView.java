@@ -422,7 +422,7 @@ public class MaterialCalendarView extends ViewGroup {
         addView(pager, new LayoutParams(calendarMode.visibleWeeksCount + DAY_NAMES_ROW));
     }
 
-    private void updateUi() {
+    public void updateUi() {
         titleChanger.change(currentMonth);
         buttonPast.setEnabled(canGoBack());
         buttonFuture.setEnabled(canGoForward());
